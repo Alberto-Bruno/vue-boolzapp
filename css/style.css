@@ -1,0 +1,22 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: rgb(218, 219, 212);
+    background: linear-gradient(0deg, rgba(218, 219, 212, 1) 85%, rgba(0, 150, 136, 1) 85%);
+    height: 100vh;
+}
+
+/* My Style */
+
+.my-container {
+    margin-top: calc((100vh - 900px) / 2);
+    height: 900px;
+}
+
+.my-profile {
+    height: 60px;
+}
