@@ -7,10 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- bootstrap icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css' 
+          integrity='sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==' 
+          crossorigin='anonymous'
+    />
     
     <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+          integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
     <!--Style.css-->
     <link rel="stylesheet" href="css/style.css">
@@ -26,12 +31,66 @@
 </head>
 
 <body>
+    <header></header>
     <div id="app">
         <div class="container-md my-container">
             <div class="row h-100">
                 <div class="col-4 bg-white">
                     <!--Profile-->
-                    <div class="row my-profile"></div>
+                    <div class="row my-profile">
+                        <div class="col-6 col-lg-8 col-xl-9 p-1">
+                            <img class="img-fluid rounded-circle ms-1 my-image" src="img/avatar_io.jpg" alt="immagine profilo">
+                            <span class="ms-1 align-middle fw-semibold d-md-inline">User Name</span>
+                        </div>
+                        <!--icon profile-->
+                        <div class="col-2 col-md-1 d-flex align-items-center text-secondary">
+                            <i class="fa-solid fa-circle-notch"></i>
+                        </div>
+                        <div class="col-2 col-md-1 d-flex align-items-center text-primary">
+                            <i class="bi bi-chat-left-dots"></i>
+                        </div>
+                        <div class="col-2 col-md-1 d-flex align-items-center text-secondary">
+                            <i class="bi bi-three-dots-vertical"></i>
+                        </div>
+                    </div>
+                    <!--Notifiche-->
+                    <div class="row bg-info-subtle d-md-block my-message">
+                        <div class="col-12 p-1">
+                            <div class="row">
+                                <div class="col-3 d-flex align-items-center ps-3">
+                                <i class="bi bi-bell-slash bg-white text-bg-info p-3 rounded-circle"></i>
+                                </div>
+                                <div class="col-9 ps-3">
+                                    <span class="d-block fw-lighter ">Ricevi notifiche di nuovi messaggi</span>
+                                    <a href="#" class="fw-lighter">Attiva notifiche desktop</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Barra di ricerca-->
+                    <div class="row">
+                        <div class="col-12 p-4 my-search text-secondary">
+                            <i class="bi bi-search px-2"></i><input type="text" class="rounded-1 border-0 px-3 w-75 " placeholder="Cerca o inizia una nuova chat">
+                        </div>
+                    </div>
+
+                    <!--Contatti-->
+                    <div class="row my-contacts">
+                        <div class="col-12 bg-white">
+                            <div class="row mb-md-1 mt-md-1 mb-sm-3">
+                                <div class="col-4 col-md-3">
+                                    <img class="img-fluid rounded-circle p-xl-2 p-lg-1" src="img/avatar_1.jpg" alt="">
+                                </div>
+                                <div class="col-6 col-md-7 mt-lg-2">
+                                    <span class="d-block fw-semibold">Michele</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Chat-->
+                    
                 </div>
             </div>
         </div>
