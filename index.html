@@ -31,70 +31,122 @@
 </head>
 
 <body>
-    <header></header>
-    <div id="app">
-        <div class="container-md my-container">
+    <div id="app" class="h-100 d-flex align-items-center justify-content-center">
+        <main div class="container shadow bg-white">
             <div class="row h-100">
-                <div class="col-4 bg-white">
-                    <!--Profile-->
-                    <div class="row my-profile">
-                        <div class="col-6 col-lg-8 col-xl-9 p-1">
-                            <img class="img-fluid rounded-circle ms-1 my-image" src="img/avatar_io.jpg" alt="immagine profilo">
-                            <span class="ms-1 align-middle fw-semibold d-md-inline">User Name</span>
+                <!-- SIDEBAR SECTION -->
+                <section id="sidebar" class="col-6 col-lg-4 p-0 h-100 bg-light-gray d-flex flex-column">
+    
+                    <!-- User section -->
+                    <div id="user-section" class="flex-shrink-0 d-flex justify-content-between">
+                        <div class="media">
+                            <figure>
+                                <img src="img/avatar_io.jpg" alt="Silvia Rivella" />
+                            </figure>
+                            <div class="h6 media-text">Silvia Rivella</div>
                         </div>
-                        <!--icon profile-->
-                        <div class="col-2 col-md-1 d-flex align-items-center text-secondary">
-                            <i class="fa-solid fa-circle-notch"></i>
-                        </div>
-                        <div class="col-2 col-md-1 d-flex align-items-center text-primary">
-                            <i class="bi bi-chat-left-dots"></i>
-                        </div>
-                        <div class="col-2 col-md-1 d-flex align-items-center text-secondary">
-                            <i class="bi bi-three-dots-vertical"></i>
+                        <div class="w-25 text-muted d-flex justify-content-around align-items-center">
+                            <i class="fa-solid fa-circle-notch" role="button"></i>
+                            <i class="fa-solid fa-comment-alt" role="button"></i>
+                            <i class="fa-solid fa-ellipsis-v" role="button"></i>
                         </div>
                     </div>
-                    <!--Message-->
-                    <div class="row bg-info-subtle d-md-block my-message">
-                        <div class="col-12 p-1">
-                            <div class="row">
-                                <div class="col-3 d-flex align-items-center ps-3">
-                                <i class="bi bi-bell-slash bg-white text-bg-info p-3 rounded-circle"></i>
-                                </div>
-                                <div class="col-9 ps-3">
-                                    <span class="d-block fw-lighter ">Ricevi notifiche di nuovi messaggi</span>
-                                    <a href="#" class="fw-lighter">Attiva notifiche desktop</a>
+    
+                    <!-- Notifications -->
+                    <div id="notifications" class="bg-light-blue flex-shrink-0">
+                        <div class="media">
+                            <div class="media-icon">
+                                <i class="fa-solid fa-bell-slash"></i>
+                            </div>
+                            <div class="media-text">
+                                <div>Ricevi notifiche di nuovi messaggi</div>
+                                <div class="fs-6 text-decoration-underline" role="button">
+                                    <small>Attiva le notifiche desktop</small>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <!--Barra di ricerca-->
-                    <div class="row">
-                        <div class="col-12 p-4 my-search text-secondary">
-                            <i class="bi bi-search px-2"></i><input type="text" class="rounded-1 border-0 px-3 w-75 " placeholder="Cerca o inizia una nuova chat">
-                        </div>
+    
+                    <!-- Search -->
+                    <div id="search-contacts" class="p-2 flex-shrink-0">
+                        <i class="fa-solid fa-search text-muted"></i>
+                        <input type="text" class="w-100" placeholder="Cerca contatto" />
                     </div>
-
-                    <!--Contatti-->
-                    <div class="row my-contacts">
-                        <div class="col-12 bg-white">
-                            <div class="row mb-md-1 mt-md-1 mb-sm-3">
-                                <div class="col-4 col-md-3">
-                                    <img class="img-fluid rounded-circle p-xl-2 p-lg-1" src="img/avatar_1.jpg" alt="">
+    
+                    <!-- Contacts List -->
+                    <div id="contacts-list" class="flex-grow-1 bg-white overflow-auto">
+                        <ul class="m-0 p-0">
+                            <li class="media">
+                                <figure>
+                                    <img src="img/avatar_2.jpg" alt="Marco Lancellotti" />
+                                </figure>
+                                <div class="h6 media-text">
+                                    <div>Michele</div>
                                 </div>
-                                <div class="col-6 col-md-7 mt-lg-2">
-                                    <span class="d-block fw-semibold">Michele</span>
+                            </li>
+                        </ul>
+                    </div>
+    
+                </section>
+                <!-- CHAT SECTION -->
+                <section id="chat" class="col-6 col-lg-8 p-0 h-100 bg-chat-color d-flex flex-column">
+    
+                    <!-- Chat Header -->
+                    <header class="bg-light-gray flex-shrink-0 d-flex justify-content-between">
+                        <div class="media">
+                            <figure>
+                                <img src="img/avatar_2.jpg" alt="Marco Lanci" />
+                            </figure>
+                            <div class="h6 media-text">
+                                <div>Michele</div>
+                                <div class="mb-0 fw-light">
+                                    <small>Ultimo accesso: </small>
                                 </div>
                             </div>
                         </div>
+                        <div class="me-3 d-flex text-muted align-items-center justify-content-around">
+                            <i class="fa-solid fa-search ms-3"></i>
+                            <i class="fa-solid fa-paperclip ms-3"></i>
+                            <i class="fa-solid fa-ellipsis-v ms-3"></i>
+                        </div>
+                    </header>
+    
+                    <!-- Chat Messages -->
+                    <div class="flex-grow-1 overflow-auto bg-chat-image">
+                        <ul class="px-3">
+                            <li class="message-container p-3 sent">
+                                <div class="message p-2 rounded-3">
+                                    <p>Hai portato a spasso il cane?</p>
+                                    <time datetime="2021-08-03T09:53">31/01/2022 - 12:13</time>
+                                </div>
+                            </li>
+                            <li class="message-container p-3 received">
+                                <div class="message p-2 rounded-3">
+                                    <p>Si!</p>
+                                    <time datetime="2021-08-03T09:53">31/01/2022 - 12:14</time>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
-
-                    <!--Chat-->
-                    
-                </div>
+    
+                    <!-- Chat Footer -->
+                    <footer class="flex-shrink-0 container-fluid">
+                        <div class="row h-100 align-items-center">
+                            <div class="col-1 d-flex justify-content-center">
+                                <i class="fa-regular fa-smile fa-2x text-muted" role="button"></i>
+                            </div>
+                            <div class="col-10">
+                                <input type="text" class="form-control" placeholder="Scrivi un messaggio" />
+                            </div>
+                            <div class="col-1 d-flex justify-content-center">
+                                <i class="fa-solid fa-microphone fa-2x text-muted" role="button"></i>
+                            </div>
+                        </div>
+                    </footer>
+    
+                </section>
             </div>
-        </div>
+        </main>
     </div>
 </body>
-
 </html>
