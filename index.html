@@ -41,9 +41,9 @@
                     <div id="user-section" class="flex-shrink-0 d-flex justify-content-between">
                         <div class="media">
                             <figure>
-                                <img src="img/avatar_io.jpg" alt="Silvia Rivella" />
+                                <img :src="buildAvatarUrl(user.avatar)" :alt="user.name" />
                             </figure>
-                            <div class="h6 media-text">Silvia Rivella</div>
+                            <div class="h6 media-text">{{ user.name }}</div>
                         </div>
                         <div class="w-25 text-muted d-flex justify-content-around align-items-center">
                             <i class="fa-solid fa-circle-notch" role="button"></i>
@@ -76,12 +76,12 @@
                     <!-- Contacts List -->
                     <div id="contacts-list" class="flex-grow-1 bg-white overflow-auto">
                         <ul class="m-0 p-0">
-                            <li class="media">
+                            <li class="media" v-for="(contact, i) in contacts" @click="setCurrentIndex(i)">
                                 <figure>
-                                    <img src="img/avatar_2.jpg" alt="Marco Lancellotti" />
+                                    <img :src="buildAvatarUrl(contact.avatar)" :alt="contact.name" />
                                 </figure>
                                 <div class="h6 media-text">
-                                    <div>Michele</div>
+                                    <div>{{ contact.name }}</div>
                                 </div>
                             </li>
                         </ul>
@@ -95,10 +95,10 @@
                     <header class="bg-light-gray flex-shrink-0 d-flex justify-content-between">
                         <div class="media">
                             <figure>
-                                <img src="img/avatar_2.jpg" alt="Marco Lanci" />
+                                <img :src="buildAvatarUrl(contacts[currentIndex].avatar)" :alt="contacts[currentIndex].name" />
                             </figure>
                             <div class="h6 media-text">
-                                <div>Michele</div>
+                                <div>{{ contacts[currentIndex].name }}</div>
                                 <div class="mb-0 fw-light">
                                     <small>Ultimo accesso: </small>
                                 </div>
