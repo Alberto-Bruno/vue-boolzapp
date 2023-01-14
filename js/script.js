@@ -1,5 +1,7 @@
 console.log('Vue OK', Vue);
 
+const dt = luxon.DateTime;
+
 const app = Vue.createApp({
     name: 'App',
     data() {
@@ -90,6 +92,19 @@ const app = Vue.createApp({
                     ],
                 },
             ]
+        }
+    },
+    computed: {
+        currentContact() {
+            return this.contacts[this.currentIndex];
+        },
+
+        currentChat() {
+            return this.currentContact.messages;
+        },
+
+        currentTime() {
+            return dt.now().setLocale('it').toLocaleString(dt.DATETIME_MED);
         }
     },
     methods: {
