@@ -115,11 +115,11 @@
                     </header>
     
                     <!-- Chat Messages -->
-                    <div class="flex-grow-1 overflow-auto bg-chat-image">
+                    <div class="flex-grow-1 overflow-auto bg-chat-image" v-for="message in currentChat" :class="{'sent' : message.status === 'sent'}">
                         <ul class="px-3">
                             <li class="message-container p-3 sent">
                                 <div class="message p-2 rounded-3">
-                                    <p>Hai portato a spasso il cane?</p>
+                                    <p>{{ message.text }}</p>
                                     <time datetime="2021-08-03T09:53">31/01/2022 - 12:13</time>
                                 </div>
                             </li>

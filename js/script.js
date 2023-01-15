@@ -114,7 +114,27 @@ const app = Vue.createApp({
 
         setCurrentIndex(index) {
             this.currentIndex = index;
-        }
+        },
+
+        sendNewMessage() {
+            this.newMessage.date = this.currentTime
+            this.currentChat.push(this.newMessage)
+            this.newMessage = {
+                date: '',
+                text: '',
+                status: 'sent'
+            }
+        },
+        
+        receiveNewMessage() {
+            setTimeout(() => {
+                this.newMessage = {
+                    date: this.currentTime,
+                    text: 'Ok',
+                    status: 'received'
+                }
+            })
+        },
     }
 });
 
