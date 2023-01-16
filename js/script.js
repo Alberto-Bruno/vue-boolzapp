@@ -6,6 +6,7 @@ const app = Vue.createApp({
     name: 'App',
     data() {
         return {
+            newMessage: '',
             currentIndex: 0,
             user: {
                 name: 'Albe Brown',
@@ -116,25 +117,29 @@ const app = Vue.createApp({
             this.currentIndex = index;
         },
 
-        sendNewMessage() {
-            this.newMessage.date = this.currentTime
-            this.currentChat.push(this.newMessage)
-            this.newMessage = {
-                date: '',
-                text: '',
-                status: 'sent'
-            }
-        },
-        
-        receiveNewMessage() {
+        sendMessage() {
+            if(!this.newMessage.trim()) return;
+
+            const message = {
+                status: 'sent',
+                date:this.currentTime,
+                text: this.newMessage
+            };
+
+            this.currentChat.push(message);
+
+            this.newMessage = '';
+
             setTimeout(() => {
-                this.newMessage = {
+                const message = {
+                    status: 'received',
                     date: this.currentTime,
-                    text: 'Ok',
-                    status: 'received'
-                }
-            })
-        },
+                    text: 'Va bene'
+                };
+                
+                this.currentChat.push(message);
+            }, 2000)
+        }
     }
 });
 
