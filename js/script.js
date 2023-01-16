@@ -143,13 +143,13 @@ const app = Vue.createApp({
         },
 
 
-      deleteMessage(message){
-        this.currentChat.splice(message, 1);
-      },
+        deleteMessage(message){
+            this.currentChat.splice(message, 1);
+        },
 
-      alertInfo() {
-        alert('Visualizzato');
-      },
+        alertInfo() {
+            alert('Visualizzato o Consegnato');
+        },
     }
 });
 
