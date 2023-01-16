@@ -120,7 +120,17 @@
                             <li v-for="message in currentChat" class="message-container p-3" :class="message.status">
                                 <div class="message p-2 rounded-3">
                                     <p>{{ message.text }}</p>
+                                    <div class="dropdown d-flex justify-content-end ms-2" v-if="message.status === 'sent'">
                                     <time datetime="2021-08-03T09:53">{{ message.date }}</time>
+                                        <button class="border-0 bg-transparent" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <i class="fa-solid fa-angle-down"></i>
+                                        </button>
+
+                                        <ul class="dropdown-menu">
+                                            <li><span @click="alertInfo" class="dropdown-item">Info messaggio</span></li>
+                                            <li><span @click="deleteMessage(message)" class="dropdown-item">Cancella messaggio</span></li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </li>
                         </ul>

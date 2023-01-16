@@ -140,7 +140,16 @@ const app = Vue.createApp({
             setTimeout(() => {
                 this.addMessage('received', 'Va bene');
             }, 2000)
-        }
+        },
+
+
+      deleteMessage(message){
+        this.currentChat.splice(message, 1);
+      },
+
+      alertInfo() {
+        alert('Visualizzato');
+      },
     }
 });
 
