@@ -120,24 +120,25 @@ const app = Vue.createApp({
         sendMessage() {
             if(!this.newMessage.trim()) return;
 
-            const message = {
-                status: 'sent',
-                date:this.currentTime,
-                text: this.newMessage
-            };
-
-            this.currentChat.push(message);
+            this.addMessage('sent', this.newMessage);
 
             this.newMessage = '';
 
+            this.autoReply();
+        },
+
+        addMessage(status, text) {
+            const message = {
+                text,
+                status,
+                date: this.currentTime,
+            };
+
+            this.currentChat.push(message);
+        },
+        autoReply() {
             setTimeout(() => {
-                const message = {
-                    status: 'received',
-                    date: this.currentTime,
-                    text: 'Va bene'
-                };
-                
-                this.currentChat.push(message);
+                this.addMessage('received', 'Va bene');
             }, 2000)
         }
     }
