@@ -106,6 +106,15 @@ const app = Vue.createApp({
 
         currentTime() {
             return dt.now().setLocale('it').toLocaleString(dt.DATETIME_MED);
+        },
+
+        filteredContacts() {
+            const searchedTerm = this.searchedContact.toLowerCase();
+
+            return this.contacts.map(contact => {
+                contact.visible = contact.name.toLowerCase().includes(searchedTerm);
+                return contact;
+            });
         }
     },
     methods: {
@@ -144,7 +153,7 @@ const app = Vue.createApp({
 
 
         deleteMessage(message){
-            this.currentChat.splice(message, 1);
+            this.currentChat.splice(message, 2);
         },
 
         alertInfo() {

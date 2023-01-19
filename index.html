@@ -80,11 +80,13 @@
                     <div id="contacts-list" class="flex-grow-1 bg-white overflow-auto">
                         <ul class="m-0 p-0">
                             <li class="media" v-for="(contact, i) in contacts" @click="setCurrentIndex(i)">
-                                <figure>
-                                    <img :src="buildAvatarUrl(contact.avatar)" :alt="contact.name" />
-                                </figure>
-                                <div class="h6 media-text">
-                                    <div>{{ contact.name }}</div>
+                                <div v-show="contact.visible">
+                                    <figure>
+                                        <img :src="buildAvatarUrl(contact.avatar)" :alt="contact.name" />
+                                    </figure>
+                                    <div class="h6 media-text">
+                                        <div>{{ contact.name }}</div>
+                                    </div>
                                 </div>
                             </li>
                         </ul>
@@ -117,7 +119,7 @@
                     <!-- Chat Messages -->
                     <div class="flex-grow-1 overflow-auto bg-chat-image">
                         <ul class="px-3">
-                            <li v-for="message in currentChat" class="message-container p-3" :class="message.status">
+                            <li v-for="(message, i) in currentChat" class="message-container p-3" :class="message.status">
                                 <div class="message p-2 rounded-3">
                                     <p>{{ message.text }}</p>
                                     <div class="dropdown d-flex justify-content-end ms-2" v-if="message.status === 'sent'">
@@ -128,7 +130,7 @@
 
                                         <ul class="dropdown-menu">
                                             <li><span @click="alertInfo" class="dropdown-item">Info messaggio</span></li>
-                                            <li><span @click="deleteMessage(message)" class="dropdown-item">Cancella messaggio</span></li>
+                                            <li><span @click="deleteMessage(i)" class="dropdown-item">Cancella messaggio</span></li>
                                         </ul>
                                     </div>
                                 </div>
